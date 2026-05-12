@@ -1,0 +1,717 @@
+/* ============================================
+   halamanDonasi.css
+   Font: Playfair Display (heading) + DM Sans (body) + Exo 2 (angka)
+   Tema: Gradient Premium — konsisten dengan halaman lain
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@400;500;600;700&family=Exo+2:wght@600;700;800&display=swap');
+
+.hd-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(rgba(15, 23, 42, 0.90), rgba(15, 23, 42, 0.95)), url("../../../assets/images/user.png") no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'DM Sans', sans-serif;
+  color: white;
+}
+
+/* ===== MAIN ===== */
+.hd-main {
+  padding: 88px 5% 60px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ===== PAGE HEADER ===== */
+.hd-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hd-page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 800;
+  margin: 0 0 6px;
+  background: linear-gradient(150deg, #ffffff 55%, rgba(255, 190, 130, 0.9));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.3px;
+}
+
+.hd-page-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.38);
+  margin: 0;
+  letter-spacing: 0.1px;
+}
+
+.hd-total-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.22);
+  color: #22c55e;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 100px;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+/* ===== FILTER BAR ===== */
+.hd-filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.hd-kategori-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.hd-kategori-tab {
+  padding: 7px 18px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.45);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  letter-spacing: 0.1px;
+}
+.hd-kategori-tab:hover {
+  color: white;
+  border-color: rgba(255, 167, 87, 0.3);
+  background: rgba(255, 167, 87, 0.06);
+}
+.hd-kategori-tab.active {
+  background: linear-gradient(to right, #a84d2c, #ffa757);
+  border-color: transparent;
+  color: white;
+  box-shadow: 0 4px 14px -4px rgba(168, 77, 44, 0.45);
+}
+
+/* Sort */
+.hd-sort-wrapper {
+  position: relative;
+}
+
+.hd-sort-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 100px;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.hd-sort-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  border-color: rgba(255, 167, 87, 0.25);
+}
+
+.hd-sort-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  background: #0b1628;
+  border: 1px solid rgba(255, 167, 87, 0.14);
+  border-radius: 14px;
+  overflow: hidden;
+  z-index: 30;
+  min-width: 170px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 167, 87, 0.04);
+}
+
+.hd-sort-option {
+  display: block;
+  width: 100%;
+  padding: 11px 16px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.52);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.hd-sort-option:last-child { border-bottom: none; }
+.hd-sort-option:hover {
+  background: rgba(255, 167, 87, 0.06);
+  color: white;
+}
+.hd-sort-option.active {
+  color: #ffa757;
+  font-weight: 700;
+  background: rgba(255, 167, 87, 0.05);
+}
+
+/* ===== GRID ===== */
+.hd-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* ===== CARD ===== */
+.hd-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 167, 87, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.hd-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 167, 87, 0.28);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 167, 87, 0.06);
+}
+
+/* Foto */
+.hd-card-foto-wrapper {
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.hd-card-foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+.hd-card:hover .hd-card-foto {
+  transform: scale(1.06);
+}
+
+.hd-card-foto-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(7, 14, 28, 0.75) 0%, transparent 55%);
+}
+
+.hd-card-kategori {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(7, 14, 28, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.78);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 100px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.hd-card-urgent {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(220, 50, 50, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  animation: pulse-urgent 2s infinite;
+}
+@keyframes pulse-urgent {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.72; }
+}
+
+/* Body */
+.hd-card-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.hd-card-org-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.hd-card-org {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hd-card-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 100px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* judul card pakai Playfair */
+.hd-card-judul {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.4;
+  color: white;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.hd-card-desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.65;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+/* Progress */
+.hd-card-progress-bg {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 100px;
+  overflow: hidden;
+}
+.hd-card-progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, #a84d2c, #ffa757);
+  border-radius: 100px;
+  box-shadow: 0 0 8px rgba(255, 167, 87, 0.3);
+}
+
+/* Stats */
+.hd-card-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.hd-card-stat-left {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+/* angka ETH pakai Exo 2 */
+.hd-card-eth {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffb870;
+}
+
+.hd-card-target {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.hd-card-persen {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.hd-card-meta {
+  display: flex;
+  gap: 12px;
+}
+
+.hd-card-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* Tombol — sharp corner, konsisten dengan halaman lain */
+.hd-card-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 11px;
+  background: linear-gradient(to right, #a84d2c, #ffa757);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  margin-top: auto;
+  box-shadow: 0 4px 14px rgba(168, 77, 44, 0.3);
+  transition: all 0.25s ease;
+  letter-spacing: 0.2px;
+  overflow: hidden;
+  position: relative;
+}
+/* shimmer sweep on hover */
+.hd-card-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 38%, rgba(255,255,255,0.16) 50%, transparent 62%);
+  transform: translateX(-100%);
+  transition: transform 0.45s ease;
+}
+.hd-card:hover .hd-card-btn::before {
+  transform: translateX(100%);
+}
+.hd-card:hover .hd-card-btn {
+  box-shadow: 0 6px 20px rgba(168, 77, 44, 0.5);
+}
+
+/* ===== EMPTY STATE ===== */
+.hd-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 80px 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.28);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+}
+
+.hd-reset-btn {
+  padding: 9px 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 167, 87, 0.2);
+  border-radius: 100px;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.hd-reset-btn:hover {
+  background: rgba(255, 167, 87, 0.08);
+  border-color: rgba(255, 167, 87, 0.35);
+  color: white;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+  .hd-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .hd-grid { grid-template-columns: 1fr; }
+  .hd-filter-bar { flex-direction: column; align-items: flex-start; }
+  .hd-page-title { font-size: 24px; }
+}
+/* ============================================
+   VOTING SECTION — page-donation
+   ============================================ */
+
+.hd-voting-section {
+  margin-bottom: 28px;
+}
+
+.hd-voting-section-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 14px; flex-wrap: wrap; gap: 8px;
+}
+.hd-voting-section-title {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 700; color: white;
+}
+.hd-voting-count {
+  background: rgba(139,92,246,0.15);
+  border: 1px solid rgba(139,92,246,0.3);
+  color: #a78bfa; font-size: 10px; font-weight: 800;
+  padding: 2px 8px; border-radius: 100px;
+}
+.hd-voting-eligible {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.25);
+  color: #22c55e; font-size: 11px; font-weight: 700;
+  padding: 4px 12px; border-radius: 100px;
+}
+
+/* Horizontal scroll list */
+.hd-voting-list {
+  display: flex; gap: 14px;
+  overflow-x: auto; padding-bottom: 6px;
+  scrollbar-width: none;
+}
+.hd-voting-list::-webkit-scrollbar { display: none; }
+
+/* Card voting */
+.hd-voting-card {
+  display: flex; gap: 13px;
+  background: rgba(139,92,246,0.05);
+  border: 1px solid rgba(139,92,246,0.18);
+  border-radius: 16px; padding: 13px;
+  text-decoration: none; color: white;
+  transition: all 0.25s; cursor: pointer;
+  min-width: 300px; max-width: 340px;
+  flex-shrink: 0;
+}
+.hd-voting-card:hover {
+  background: rgba(139,92,246,0.1);
+  border-color: rgba(139,92,246,0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(139,92,246,0.15);
+}
+
+.hd-voting-foto {
+  width: 80px; height: 65px;
+  border-radius: 10px; object-fit: cover; flex-shrink: 0;
+}
+
+.hd-voting-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+
+.hd-voting-top {
+  display: flex; align-items: center; justify-content: space-between; gap: 6px;
+}
+.hd-voting-org { font-size: 11px; color: rgba(255,255,255,0.38); }
+
+.hd-voting-badge {
+  font-size: 9.5px; font-weight: 800;
+  padding: 2px 8px; border-radius: 100px; white-space: nowrap; flex-shrink: 0;
+}
+.hd-voting-badge.open   { background: rgba(139,92,246,0.15); border: 1px solid rgba(139,92,246,0.3); color: #a78bfa; }
+.hd-voting-badge.voted  { background: rgba(34,197,94,0.12);  border: 1px solid rgba(34,197,94,0.28); color: #22c55e; }
+
+.hd-voting-judul {
+  font-family: 'Playfair Display', serif;
+  font-size: 13px; font-weight: 700; margin: 0;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+.hd-voting-progress-wrap { display: flex; align-items: center; gap: 7px; }
+.hd-voting-progress-track {
+  flex: 1; height: 5px;
+  background: rgba(255,255,255,0.07); border-radius: 100px;
+  overflow: visible; position: relative;
+}
+.hd-voting-progress-fill {
+  height: 100%; background: linear-gradient(to right, #166534, #22c55e);
+  border-radius: 100px; transition: width 0.6s ease;
+  box-shadow: 0 0 5px rgba(34,197,94,0.3);
+}
+.hd-voting-threshold-line {
+  position: absolute; top: -3px; bottom: -3px;
+  width: 1.5px; background: #ffa757; border-radius: 1px;
+}
+.hd-voting-progress-pct {
+  font-size: 10px; font-weight: 700; color: #22c55e; flex-shrink: 0;
+}
+
+.hd-voting-count-txt {
+  font-size: 10.5px; color: rgba(255,255,255,0.3); margin: 0;
+}
+
+/* Divider sebelum kampanye aktif */
+.hd-aktif-header {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.7);
+  margin-bottom: 16px;
+}
+.hd-aktif-header::after {
+  content: ''; flex: 1; height: 1px;
+  background: rgba(255,255,255,0.07);
+}
+/* ============================================
+   VOTING CARDS — grid version (hd-card--voting)
+   ============================================ */
+
+/* Card voting di grid: border ungu menggantikan oranye */
+.hd-card--voting {
+  border-color: rgba(139, 92, 246, 0.18);
+}
+.hd-card--voting:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(139, 92, 246, 0.08);
+}
+
+/* Badge "Menunggu Voting" — pojok kanan atas foto */
+.hd-card-badge-voting {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(139, 92, 246, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9.5px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 100px;
+  letter-spacing: 0.4px;
+  animation: pulse-voting 2.5s infinite;
+}
+@keyframes pulse-voting {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.78; }
+}
+
+/* Badge "Voted" & "Bisa Vote" di org row */
+.hd-card-voted-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  color: #22c55e;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 100px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.hd-card-canvote-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.28);
+  color: #a78bfa;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 100px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Progress bar voting (menggantikan progress donasi) */
+.hd-card-voting-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.hd-card-voting-bar-track {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 100px;
+  overflow: visible;
+  position: relative;
+}
+.hd-card-voting-bar-fill {
+  height: 100%;
+  background: linear-gradient(to right, #166534, #22c55e);
+  border-radius: 100px;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.3);
+  transition: width 0.6s ease;
+}
+.hd-card-voting-bar-threshold {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  width: 1.5px;
+  background: #ffa757;
+  border-radius: 1px;
+  box-shadow: 0 0 4px rgba(255, 167, 87, 0.5);
+}
+.hd-card-voting-bar-pct {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #22c55e;
+  flex-shrink: 0;
+}
+
+/* Tombol biru-ungu untuk voting card */
+.hd-card-btn--voting {
+  background: linear-gradient(to right, #4c1d95, #7c3aed);
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
+}
+.hd-card--voting:hover .hd-card-btn--voting {
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+}
+
+
+
+

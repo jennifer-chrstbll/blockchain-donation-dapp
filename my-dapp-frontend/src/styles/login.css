@@ -1,0 +1,495 @@
+/* ============================================
+   login.css  (dipakai oleh login.js)
+   Salin file ini juga sebagai register.css
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Playfair+Display:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
+.lr-wrapper {
+  min-height: 100vh; /* KEMBALIKAN KE min-height */
+  /* HAPUS overflow: hidden; dari sini */
+  width: 100vw;
+  max-width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'DM Sans', sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px; /* Kembalikan padding dasar agar register aman */
+  box-sizing: border-box;
+  position: relative;
+}
+
+.lr-back {
+  position: absolute;
+  top: 24px;
+  left: 5%;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 6px 14px 6px 10px;
+  border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+}
+.lr-back:hover {
+  color: white;
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.2);
+  transform: translateX(-2px);
+}
+
+.lr-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 4px;
+  letter-spacing: -0.3px;
+  text-transform: none; /* mixed case seperti gambar — bukan all caps */
+}
+/* "Chain" — oranye solid, persis seperti referensi gambar */
+.lr-logo span {
+  color: #ffa757;
+  -webkit-text-fill-color: #ffa757;
+}
+
+/* ===== CARD ===== */
+.lr-card {
+  padding: 24px 32px; /* Kurangi padding atas & bawah dari 32px menjadi 24px */
+  background: rgba(6, 12, 24, 0.92);
+  border-top: 2px solid rgba(255, 167, 87, 0.55);
+  border-left: 1px solid rgba(255, 167, 87, 0.22);
+  border-right: 1px solid rgba(255, 167, 87, 0.22);
+  border-bottom: 1px solid rgba(255, 167, 87, 0.1);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow:
+    -6px 0 32px -8px rgba(255, 120, 40, 0.18),
+    6px 0 32px -8px rgba(255, 195, 161, 0.18),
+    0 32px 64px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgb(2, 204, 255);
+}
+
+.lr-card-header {
+  margin-bottom: 12px;
+}
+
+.lr-card-header::before {
+  margin-bottom: 10px; /* Kurangi dari 14px */
+}
+
+/* ===== DUMMY HINT ===== */
+.lr-dummy-hint {
+  background: rgba(255, 167, 87, 0.07);
+  border: 1px dashed rgba(255, 167, 87, 0.3);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lr-dummy-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #ffa757;
+  margin: 0 0 4px;
+}
+
+.lr-dummy-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+}
+
+.lr-dummy-row span {
+  min-width: 60px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.75);
+}
+
+.lr-dummy-row code {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: rgba(255, 200, 120, 0.8);
+  background: rgba(255,255,255,0.05);
+  padding: 2px 7px;
+  border-radius: 6px;
+}
+
+/* ===== ALERT ===== */
+.lr-alert {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  padding: 11px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+.lr-alert-error {
+  background: rgba(239,68,68,0.1);
+  border: 1px solid rgba(239,68,68,0.25);
+  color: #ef4444;
+}
+.lr-alert-success {
+  background: rgba(34,197,94,0.1);
+  border: 1px solid rgba(34,197,94,0.25);
+  color: #22c55e;
+}
+
+/* ===== FORM ===== */
+.lr-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lr-form-title {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 2px;
+  color: white;
+}
+
+.lr-form-sub {
+  font-size: 13px;
+  color: rgba(255,255,255,0.32);
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.lr-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.lr-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: rgba(255,255,255,0.4);
+}
+
+.lr-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lr-forgot {
+  background: none;
+  border: none;
+  color: #ffa757;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.2s;
+}
+.lr-forgot:hover { opacity: 0.75; }
+
+.lr-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.lr-input-icon {
+  position: absolute;
+  left: 14px;
+  color: rgba(255,255,255,0.3);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.lr-input {
+  /* Ubah padding atas & bawah jadi 10px (sebelumnya 14px) */
+  padding: 10px 46px 10px 44px !important; 
+  /* ... (biarkan sisa properti di dalam class ini sama persis seperti sebelumnya) ... */
+  width: 100%;
+  background: rgba(8, 18, 36, 0.9);
+  border: 1px solid rgba(255, 167, 87, 0.18);
+  border-radius: 8px;
+  color: white; 
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s, background 0.2s;
+  position: relative;
+  z-index: 1; 
+}
+
+/* override browser autofill white background */
+.lr-input:-webkit-autofill,
+.lr-input:-webkit-autofill:hover,
+.lr-input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px rgba(8, 18, 36, 0.95) inset !important;
+  -webkit-text-fill-color: white !important;
+  border-color: rgba(255, 167, 87, 0.35) !important;
+  caret-color: white;
+}
+.lr-input:focus {
+  border-color: rgba(255, 167, 87, 0.5);
+  background: rgba(8, 18, 36, 0.95);
+}
+.lr-input::placeholder { 
+  color: rgba(255, 255, 255, 0.4) !important; /* Warna transparan persis seperti icon */
+  opacity: 1 !important; /* Memaksa browser (terutama Firefox) untuk tidak meredupkan teks lagi */
+  font-family: 'DM Sans', sans-serif;
+}
+
+
+.lr-eye-btn {
+  position: absolute;
+  right: 14px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.35);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  transition: color 0.2s;
+  z-index: 2;
+}
+.lr-eye-btn:hover { color: rgba(255,255,255,0.7); }
+
+.lr-match-hint {
+  font-size: 11px;
+  font-weight: 600;
+  margin: 0;
+}
+.lr-match-hint.match { color: #22c55e; }
+.lr-match-hint.nomatch { color: #ef4444; }
+
+/* ===== WALLET ===== */
+.lr-wallet-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lr-wallet-label-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lr-wallet-required {
+  font-size: 10px;
+  font-weight: 700;
+  background: rgba(239,68,68,0.12);
+  border: 1px solid rgba(239,68,68,0.25);
+  color: #ef4444;
+  padding: 2px 7px;
+  border-radius: 100px;
+}
+
+.lr-btn-wallet {
+  padding: 10px; /* Kurangi dari 13px */
+  /* ... (biarkan sisa properti sama) ... */
+  width: 100%;
+  background: rgba(255,255,255,0.07);
+  border: 1px dashed rgba(255,255,255,0.2);
+  border-radius: 12px;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.2s;
+}
+
+.lr-btn-wallet:hover:not(:disabled) {
+  background: rgba(255,255,255,0.11);
+  border-color: rgba(255,255,255,0.35);
+}
+.lr-btn-wallet:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.lr-metamask-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.lr-wallet-connected {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(34,197,94,0.07);
+  border: 1px solid rgba(34,197,94,0.2);
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+
+.lr-wallet-dot-green {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+  box-shadow: 0 0 8px rgba(34,197,94,0.6);
+}
+
+.lr-wallet-info { flex: 1; }
+
+.lr-wallet-connected-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  margin: 0 0 2px;
+}
+
+.lr-wallet-addr {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+}
+
+.lr-wallet-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ===== SUBMIT ===== */
+.lr-btn-submit {
+  padding: 10px; /* Kurangi dari 14px */
+  margin-top: 0px; /* Hilangkan margin top tambahan */
+  /* ... (biarkan sisa properti sama) ... */
+  width: 100%;
+  background: linear-gradient(to right, #a84d2c, #ffa757);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(168,77,44,0.4);
+  transition: all 0.3s;
+  letter-spacing: 0.3px;
+}
+
+.lr-btn-submit:hover:not(:disabled) {
+  filter: brightness(1.1);
+  box-shadow: 0 6px 25px rgba(168,77,44,0.6);
+}
+.lr-btn-submit:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.lr-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.lr-spinner {
+  width: 16px; height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.lr-switch {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+  text-align: center;
+  margin: 0;
+}
+
+.lr-switch-link {
+  font-family: 'DM Sans', sans-serif;
+  color: #ffa757;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.lr-switch-link:hover { opacity: 0.75; }
+
+.lr-verified-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(34,197,94,0.6);
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 480px) {
+  .lr-card { padding: 24px 20px; border-radius: 14px; }
+  .lr-back { font-size: 11px; padding: 5px 12px 5px 8px; }
+}
+
+.lr-logo {
+  margin-bottom: 12px; /* Tambahkan ini agar logo lebih dekat ke card */
+}
+
+/* =========================================
+   PENGECUALIAN KHUSUS HALAMAN LOGIN
+   ========================================= */
+.login-page.lr-wrapper {
+  height: 100vh;       /* Kunci layar login */
+  overflow: hidden;    /* Hilangkan scroll login */
+  padding: 10px 20px;  /* Perkecil padding login */
+}
+
+.login-page .lr-card { padding: 24px 32px; }
+.login-page .lr-card-header { margin-bottom: 12px; }
+.login-page .lr-card-header::before { margin-bottom: 10px; }
+.login-page .lr-form { gap: 10px; }
+.login-page .lr-input { padding: 10px 46px 10px 44px !important; }
+.login-page .lr-btn-submit { padding: 10px; margin-top: 0px; }
+.login-page .lr-btn-wallet { padding: 10px; }
+.login-page .lr-logo { margin-bottom: 12px; }
+.login-page .lr-verified-badge { margin-top: 12px; }

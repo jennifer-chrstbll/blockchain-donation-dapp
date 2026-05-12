@@ -1,0 +1,339 @@
+/* Bricolage Grotesque — heading: editorial, modern, cocok dark fintech */
+/* DM Sans — body: bersih dan sangat readable */
+/* Exo 2 — card heading | Nunito Sans — card body */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Exo+2:wght@600;700;800&family=Nunito+Sans:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --primary: #ffffff;
+  --accent: #22c55e;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html, body {
+  overscroll-behavior: none;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== ANIMASI FADE-IN ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.landing-badge       { animation: fadeUp 0.5s ease both; animation-delay: 0.1s; }
+.landing-title       { animation: fadeUp 0.5s ease both; animation-delay: 0.2s; }
+.landing-subtitle    { animation: fadeUp 0.5s ease both; animation-delay: 0.3s; }
+.landing-features    { animation: fadeUp 0.5s ease both; animation-delay: 0.4s; }
+.landing-cta         { animation: fadeUp 0.5s ease both; animation-delay: 0.5s; }
+
+.landing-page-wrapper {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ===== NAVBAR ===== */
+.landing-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  z-index: 50;
+  background: rgba(15, 23, 42, 0.2) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.landing-logo {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  color: white;
+  margin: 0;
+  flex-shrink: 0;
+  font-family: 'Playfair Display';
+}
+
+.landing-logo span {
+  color: #ffa757;
+}
+
+.landing-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* ── Masuk ── */
+.landing-btn-login {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 24px;
+  border-radius: 100px;
+  display: inline-block;
+  background: transparent;
+  border: 0.5px solid #ffa757 !important;
+  box-shadow: none !important;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  letter-spacing: 0.2px;
+}
+
+.landing-btn-login:hover {
+  background: rgba(255, 167, 87, 0.12);
+  border-color: #ffa757 !important;
+  transform: translateY(-2px);
+  box-shadow: none !important;
+}
+
+/* ── Daftar ── */
+.landing-btn-daftar {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 24px;
+  border-radius: 100px;
+  display: inline-block;
+  background: linear-gradient(to right, #a84d2c 0%, #ffa757 100%);
+  border: none;
+  box-shadow:
+    0 4px 6px -2px rgba(255, 185, 130, 0.5),
+    0 6px 14px -4px rgba(168, 77, 44, 0.5);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  white-space: nowrap;
+  letter-spacing: 0.2px;
+}
+
+.landing-btn-daftar:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 4px 8px -2px rgba(255, 185, 130, 0.65),
+    0 8px 18px -4px rgba(168, 77, 44, 0.65);
+}
+
+/* ===== HERO ===== */
+.landing-hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 110px 20px 50px;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.landing-badge {
+  background: rgba(255, 167, 87, 0.1);
+  padding: 6px 18px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 167, 87, 0.3);
+  backdrop-filter: blur(5px);
+  width: fit-content;
+  color: #ffc491;
+}
+
+.landing-title {
+  font-family: 'Playfair Display';
+  font-size: clamp(32px, 4.5vw, 56px);
+  line-height: 1.12;
+  font-weight: 890;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+  color: white;
+}
+
+.landing-subtitle {
+  font-size: 16px;
+  color: #cbd5e1;
+  max-width: 620px;
+  line-height: 1.7;
+  margin: 0 auto 40px;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+}
+
+/* ===== FEATURE BOX ===== */
+.landing-features {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto 36px;
+  flex-wrap: wrap;
+}
+
+.landing-feature-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 167, 87, 0.1) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 28px 22px;
+  border: 1px solid rgba(255, 167, 87, 0.15);
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 250px;
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.landing-feature-card:hover {
+  transform: translateY(-6px);
+  background: linear-gradient(135deg, rgba(168, 77, 44, 0.2) 0%, rgba(255, 167, 87, 0.2) 100%);
+  border-color: rgba(255, 167, 87, 0.45);
+  box-shadow: 0 16px 32px -8px rgba(168, 77, 44, 0.3);
+}
+
+.landing-icon-box {
+  font-size: 20px;
+  margin-bottom: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ← PERUBAHAN 1: Exo 2 + gradient teks */
+.landing-feature-card h3 {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 17px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 40%, #ffa757);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.1px;
+}
+
+/* ← PERUBAHAN 2: Nunito Sans + warna warm */
+.landing-feature-card p {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px; /* ← dari 13px ke 16px */
+  opacity: 0.72;
+  margin-bottom: 0;
+  line-height: 1.6;
+  color: rgba(175, 192, 210, 0.88);
+}
+
+/* ===== CTA ===== */
+.landing-cta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.landing-btn {
+  position: relative;
+  padding: 13px 34px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  border: none;
+  background: linear-gradient(to right, #a84d2c 0%, #ffa757 100%);
+  transition: all 0.3s ease;
+  z-index: 1;
+  white-space: nowrap;
+  letter-spacing: 0.2px;
+  box-shadow: 0 4px 14px -4px rgba(168, 77, 44, 0.5);
+}
+
+.landing-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 89%;
+  height: 1px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 8px 1px rgba(255, 200, 150, 0.8);
+  filter: blur(1px);
+  opacity: 0.9;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.landing-btn:hover {
+  filter: brightness(0.88);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(168, 77, 44, 0.6);
+}
+
+.landing-btn:hover::after {
+  width: 45%;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .landing-navbar { padding: 15px 20px; }
+  .landing-hero { padding: 110px 20px 50px; }
+  .landing-title { font-size: 50px; letter-spacing: -0.5px; }
+  .landing-features { flex-direction: column; align-items: center; gap: 14px; }
+  .landing-feature-card { max-width: 100%; width: 100%; }
+  .landing-cta { flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto; }
+  .landing-btn { width: 100%; }
+
+  .landing-btn-login,
+  .landing-btn-daftar {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}

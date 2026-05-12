@@ -1,0 +1,453 @@
+/* ============================================
+   login.css  (dipakai oleh login.js)
+   Salin file ini juga sebagai register.css
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+.lr-wrapper {
+  min-height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.lr-back {
+  position: absolute;
+  top: 24px;
+  left: 5%;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.lr-back:hover { color: white; }
+
+.lr-logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+}
+.lr-logo span { color: #125879; }
+
+/* ===== CARD ===== */
+.lr-card {
+  background: rgba(10, 22, 40, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 28px;
+  padding: 32px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+}
+
+.lr-card-header {
+  margin-bottom: 20px;
+}
+
+/* ===== DUMMY HINT ===== */
+.lr-dummy-hint {
+  background: rgba(255, 167, 87, 0.07);
+  border: 1px dashed rgba(255, 167, 87, 0.3);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lr-dummy-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #ffa757;
+  margin: 0 0 4px;
+}
+
+.lr-dummy-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+}
+
+.lr-dummy-row span {
+  min-width: 60px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.75);
+}
+
+.lr-dummy-row code {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: rgba(255, 200, 120, 0.8);
+  background: rgba(255,255,255,0.05);
+  padding: 2px 7px;
+  border-radius: 6px;
+}
+
+/* ===== ALERT ===== */
+.lr-alert {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  padding: 11px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+.lr-alert-error {
+  background: rgba(239,68,68,0.1);
+  border: 1px solid rgba(239,68,68,0.25);
+  color: #ef4444;
+}
+.lr-alert-success {
+  background: rgba(34,197,94,0.1);
+  border: 1px solid rgba(34,197,94,0.25);
+  color: #22c55e;
+}
+
+/* ===== FORM ===== */
+.lr-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lr-form-title {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0 0 2px;
+}
+
+.lr-form-sub {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  margin: 0;
+}
+
+.lr-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.lr-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(255,255,255,0.5);
+}
+
+.lr-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lr-forgot {
+  background: none;
+  border: none;
+  color: #ffa757;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.2s;
+}
+.lr-forgot:hover { opacity: 0.75; }
+
+.lr-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.lr-input-icon {
+  position: absolute;
+  left: 14px;
+  color: rgba(255,255,255,0.3);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.lr-input {
+  width: 100%;
+  padding: 12px 42px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  color: white;
+  font-size: 14px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s, background 0.2s;
+}
+.lr-input:focus {
+  border-color: rgba(255,167,87,0.45);
+  background: rgba(255,255,255,0.08);
+}
+.lr-input::placeholder { color: rgba(255,255,255,0.2); }
+
+.lr-eye-btn {
+  position: absolute;
+  right: 14px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.35);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  transition: color 0.2s;
+  z-index: 2;
+}
+.lr-eye-btn:hover { color: rgba(255,255,255,0.7); }
+
+.lr-match-hint {
+  font-size: 11px;
+  font-weight: 600;
+  margin: 0;
+}
+.lr-match-hint.match { color: #22c55e; }
+.lr-match-hint.nomatch { color: #ef4444; }
+
+/* ===== WALLET ===== */
+.lr-wallet-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lr-wallet-label-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lr-wallet-required {
+  font-size: 10px;
+  font-weight: 700;
+  background: rgba(239,68,68,0.12);
+  border: 1px solid rgba(239,68,68,0.25);
+  color: #ef4444;
+  padding: 2px 7px;
+  border-radius: 100px;
+}
+
+.lr-btn-wallet {
+  width: 100%;
+  padding: 13px;
+  background: rgba(255,255,255,0.07);
+  border: 1px dashed rgba(255,255,255,0.2);
+  border-radius: 12px;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.2s;
+}
+.lr-btn-wallet:hover:not(:disabled) {
+  background: rgba(255,255,255,0.11);
+  border-color: rgba(255,255,255,0.35);
+}
+.lr-btn-wallet:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.lr-metamask-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.lr-wallet-connected {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(34,197,94,0.07);
+  border: 1px solid rgba(34,197,94,0.2);
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+
+.lr-wallet-dot-green {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+  box-shadow: 0 0 8px rgba(34,197,94,0.6);
+}
+
+.lr-wallet-info { flex: 1; }
+
+.lr-wallet-connected-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  margin: 0 0 2px;
+}
+
+.lr-wallet-addr {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+}
+
+.lr-wallet-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ===== SUBMIT ===== */
+.lr-btn-submit {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(to right, #a84d2c, #ffa757);
+  border: none;
+  border-radius: 100px;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(168,77,44,0.4);
+  transition: all 0.3s;
+  margin-top: 4px;
+}
+.lr-btn-submit:hover:not(:disabled) {
+  filter: brightness(1.1);
+  box-shadow: 0 6px 25px rgba(168,77,44,0.6);
+}
+.lr-btn-submit:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.lr-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.lr-spinner {
+  width: 16px; height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.lr-switch {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  margin: 0;
+}
+
+.lr-switch-link {
+  color: #ffa757;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.lr-switch-link:hover { opacity: 0.75; }
+
+.lr-verified-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(34,197,94,0.7);
+  letter-spacing: 0.3px;
+}
+
+.register-page.lr-wrapper {
+  height: 100vh;
+  overflow: hidden; /* Menghilangkan scrollbar di layar utama */
+  padding: 10px 20px;
+  justify-content: center; /* Selalu di tengah layaknya login */
+}
+
+.register-page .lr-card {
+  max-height: 75vh; /* Memperpendek card (maksimal 75% dari tinggi layar) */
+  overflow-y: auto; /* Memunculkan scrollbar otomatis di dalam card */
+  padding: 24px 32px;
+}
+
+.register-page .lr-card::-webkit-scrollbar {
+  width: 6px; /* Lebar scrollbar */
+}
+
+.register-page .lr-card::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02); /* Warna jalur background scrollbar */
+  border-radius: 10px;
+  margin: 20px 0; /* Memberi jarak agar scrollbar tidak mentok ke ujung atas/bawah */
+}
+
+.register-page .lr-card::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 167, 87, 0.7); /* Warna tuas saat di-hover / disentuh mouse */
+}
+
+.register-page .lr-logo {
+  margin-bottom: 12px;
+}
+
+.register-page .lr-form {
+  gap: 12px;
+}
+
+@media (max-width: 480px) {
+  .lr-card { padding: 24px 20px; border-radius: 20px; }
+  .lr-back { font-size: 12px; }
+}
+
+/* Jika layar komputernya cukup tinggi, otomatis letakkan di tengah (center) sama persis seperti Login */
+@media (min-height: 850px) {
+  .register-page.lr-wrapper {
+    justify-content: center;
+  }
+}

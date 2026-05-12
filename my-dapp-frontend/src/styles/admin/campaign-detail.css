@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+.cda-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(rgba(15, 23, 42, 0.90), rgba(15, 23, 42, 0.95)), url("../../assets/images/daftar-campaign.png") no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: white;
+}
+
+.cda-main {
+  padding: 88px 5% 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== BACK BUTTON ===== */
+.cda-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  margin-bottom: 24px;
+  transition: all 0.2s;
+}
+.cda-back:hover { background: rgba(255,255,255,0.13); color: white; }
+
+/* ===== LAYOUT ===== */
+.cda-content {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ===== KOLOM KIRI ===== */
+.cda-foto-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  aspect-ratio: 16/9;
+}
+.cda-foto { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cda-foto-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,22,40,0.5) 0%, transparent 60%);
+}
+
+.cda-status-badge {
+  position: absolute;
+  top: 12px; right: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 100px;
+}
+.cda-badge-aktif   { background: rgba(34,197,94,0.15);  border: 1px solid rgba(34,197,94,0.3);  color: #22c55e; }
+.cda-badge-selesai { background: rgba(87,163,255,0.15); border: 1px solid rgba(87,163,255,0.3); color: #57a3ff; }
+.cda-badge-ditutup { background: rgba(239,68,68,0.12);  border: 1px solid rgba(239,68,68,0.25); color: #ef4444; }
+
+/* Cards */
+.cda-organizer-card,
+.cda-section-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 16px 18px;
+  margin-bottom: 12px;
+  backdrop-filter: blur(8px);
+}
+.cda-organizer-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cda-organizer-info { display: flex; align-items: center; gap: 12px; }
+.cda-organizer-avatar {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #125879, #1a7aa8);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; flex-shrink: 0;
+}
+.cda-organizer-label { font-size: 11px; color: rgba(255,255,255,0.4); margin: 0 0 2px; }
+.cda-organizer-name  { font-size: 14px; font-weight: 600; margin: 0; }
+.cda-verified-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.25);
+  color: #22c55e; font-size: 11px; font-weight: 700;
+  padding: 4px 10px; border-radius: 100px; white-space: nowrap;
+}
+.cda-section-title  { font-size: 13px; font-weight: 700; margin: 0 0 8px; color: rgba(255,255,255,0.85); }
+.cda-deskripsi      { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.55); margin: 0; }
+
+/* Contract */
+.cda-contract-card {
+  border-color: rgba(255,167,87,0.15);
+  background: rgba(255,167,87,0.04);
+}
+.cda-contract-label {
+  font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.8px;
+  color: #ffa757; margin: 0 0 10px;
+  display: flex; align-items: center; gap: 5px;
+}
+.cda-contract-row { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.cda-contract-address {
+  font-family: 'Courier New', monospace;
+  font-size: 11px; color: rgba(255,255,255,0.45);
+  word-break: break-all; flex: 1;
+}
+.cda-copy-btn {
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px; padding: 6px; cursor: pointer;
+  color: rgba(255,255,255,0.6); display: flex; align-items: center;
+  transition: background 0.2s; flex-shrink: 0;
+}
+.cda-copy-btn:hover { background: rgba(255,255,255,0.15); }
+.cda-etherscan-link {
+  display: inline-flex; align-items: center; gap: 4px;
+  color: #ffa757; font-size: 12px; font-weight: 600;
+  text-decoration: none; transition: opacity 0.2s;
+}
+.cda-etherscan-link:hover { opacity: 0.75; }
+
+/* Admin action buttons */
+.cda-admin-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+.cda-btn-etherscan {
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  padding: 12px; border-radius: 12px;
+  background: rgba(87,163,255,0.08); border: 1px solid rgba(87,163,255,0.2);
+  color: #57a3ff; font-size: 13px; font-weight: 700;
+  text-decoration: none; transition: all 0.2s;
+}
+.cda-btn-etherscan:hover { background: rgba(87,163,255,0.15); }
+
+.cda-btn-nonaktif {
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  padding: 12px; border-radius: 12px;
+  background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2);
+  color: #ef4444; font-size: 13px; font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  cursor: pointer; transition: all 0.2s;
+}
+.cda-btn-nonaktif:hover { background: rgba(239,68,68,0.15); }
+
+/* ===== KOLOM KANAN ===== */
+.cda-judul-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 24px; margin-bottom: 20px;
+  backdrop-filter: blur(8px);
+}
+.cda-card-id { font-family: 'Courier New', monospace; font-size: 11px; color: rgba(255,255,255,0.3); margin: 0 0 6px; }
+.cda-judul   { font-size: 22px; font-weight: 800; line-height: 1.3; margin: 0 0 16px; }
+
+.cda-stats-row {
+  display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px;
+}
+.cda-stat {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 12px; color: rgba(255,255,255,0.5);
+}
+
+.cda-progress-section { margin-bottom: 14px; }
+.cda-progress-bg {
+  width: 100%; height: 8px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 100px; overflow: hidden; margin-bottom: 8px;
+}
+.cda-progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, #a84d2c, #ffa757);
+  border-radius: 100px;
+  box-shadow: 0 0 10px rgba(255,167,87,0.4);
+}
+.cda-progress-info { display: flex; justify-content: space-between; align-items: center; }
+.cda-terkumpul { font-size: 15px; font-weight: 700; color: #ffa757; }
+.cda-persen    { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.45); }
+.cda-tanggal-aktif { font-size: 12px; color: rgba(255,255,255,0.3); margin: 0; }
+
+/* ===== LEDGER ===== */
+.cda-ledger-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px; padding: 24px;
+  backdrop-filter: blur(8px);
+}
+.cda-ledger-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 18px;
+}
+.cda-ledger-title { font-size: 16px; font-weight: 700; margin: 0 0 4px; }
+.cda-ledger-sub   { font-size: 12px; color: rgba(255,255,255,0.35); margin: 0; line-height: 1.5; max-width: 260px; }
+.cda-live-badge {
+  display: flex; align-items: center; gap: 6px;
+  background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.25);
+  color: #22c55e; font-size: 10px; font-weight: 800;
+  letter-spacing: 1px; padding: 4px 10px; border-radius: 100px; white-space: nowrap;
+}
+.cda-live-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #22c55e; animation: pulse-cda 1.5s infinite;
+}
+@keyframes pulse-cda {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.7); }
+}
+.cda-table-wrapper {
+  overflow-x: auto; border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06); margin-bottom: 0;
+}
+.cda-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.cda-table thead tr { background: rgba(255,255,255,0.04); }
+.cda-table th {
+  padding: 10px 14px; text-align: left;
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.6px; color: rgba(255,255,255,0.3); white-space: nowrap;
+}
+.cda-table-row { border-top: 1px solid rgba(255,255,255,0.04); transition: background 0.15s; }
+.cda-table-row:hover { background: rgba(255,255,255,0.03); }
+.cda-table td { padding: 12px 14px; vertical-align: middle; }
+.cda-wallet    { font-family: 'Courier New', monospace; font-size: 12px; color: rgba(255,255,255,0.5); }
+.cda-jumlah-eth{ color: #ffa757; font-weight: 700; font-size: 13px; }
+.cda-waktu     { color: rgba(255,255,255,0.4); font-size: 12px; white-space: nowrap; }
+.cda-tx-link {
+  display: inline-flex; align-items: center; gap: 3px;
+  color: #57a3ff; text-decoration: none;
+  font-size: 12px; font-family: 'Courier New', monospace;
+  transition: opacity 0.2s;
+}
+.cda-tx-link:hover { opacity: 0.7; }
+.cda-ledger-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 14px; margin-top: 4px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-size: 12px; color: rgba(255,255,255,0.3);
+}
+
+/* ===== MODAL ===== */
+.cda-modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.6); backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 100; padding: 20px;
+}
+.cda-modal {
+  background: #0f1f38; border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 24px; padding: 32px; max-width: 420px; width: 100%;
+  display: flex; flex-direction: column; align-items: center;
+  gap: 12px; text-align: center;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+}
+.cda-modal-icon {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: rgba(255,167,87,0.1); border: 1px solid rgba(255,167,87,0.2);
+  display: flex; align-items: center; justify-content: center;
+}
+.cda-modal-title { font-size: 18px; font-weight: 800; margin: 0; }
+.cda-modal-desc  { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.6; margin: 0; }
+.cda-modal-actions { display: flex; gap: 10px; width: 100%; margin-top: 8px; }
+.cda-btn-nonaktif-confirm {
+  flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 12px; background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.3);
+  border-radius: 12px; color: #ef4444; font-size: 14px; font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif; cursor: pointer; transition: all 0.2s;
+}
+.cda-btn-nonaktif-confirm:hover { background: rgba(239,68,68,0.25); }
+.cda-modal-batal {
+  flex: 1; padding: 12px; background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;
+  color: rgba(255,255,255,0.6); font-size: 14px; font-weight: 600;
+  font-family: 'Plus Jakarta Sans', sans-serif; cursor: pointer; transition: all 0.2s;
+}
+.cda-modal-batal:hover { background: rgba(255,255,255,0.09); color: white; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .cda-content { grid-template-columns: 1fr; }
+}
+
+
+
+

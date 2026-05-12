@@ -1,0 +1,267 @@
+/* ============================================
+   home-user.css
+   Font: Playfair Display + DM Sans + Exo 2
+   Tema: Dark navy + Orange gradient (Premium)
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@400;500;600;700&family=Exo+2:wght@600;700;800&family=Nunito+Sans:wght@400;600&display=swap');
+
+.du-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(rgba(15, 23, 42, 0.90), rgba(15, 23, 42, 0.95)), url("../../assets/images/user.png") no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'DM Sans', sans-serif;
+  color: white;
+}
+
+.du-main {
+  padding: 88px 5% 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== WELCOME CARD ===== */
+.du-welcome-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(168,77,44,0.22) 0%, rgba(255,167,87,0.12) 50%, rgba(255,255,255,0.04) 100%);
+  border: 1px solid rgba(255,167,87,0.25);
+  border-radius: 24px;
+  padding: 22px 28px;
+  margin-bottom: 24px;
+  gap: 24px;
+  flex-wrap: wrap;
+  box-shadow: 0 8px 32px -8px rgba(168,77,44,0.25), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.du-welcome-left { display: flex; align-items: center; gap: 18px; }
+
+.du-welcome-avatar {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: linear-gradient(135deg, #a84d2c, #ffa757);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; font-weight: 800; flex-shrink: 0;
+  box-shadow: 0 0 24px rgba(255,167,87,0.4), 0 4px 12px rgba(168,77,44,0.3);
+}
+
+.du-welcome-greeting {
+  font-size: 10px; color: rgba(255,220,180,0.55);
+  margin: 0 0 3px; letter-spacing: 0.8px; text-transform: uppercase;
+}
+
+.du-welcome-nama {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; font-weight: 800; margin: 0 0 8px; line-height: 1.2;
+  text-shadow: 0 1px 8px rgba(255,167,87,0.2);
+}
+
+.du-wallet-row { display: flex; align-items: center; gap: 8px; }
+
+.du-wallet-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #22c55e; flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(34,197,94,0.6);
+  animation: du-pulse-green 2s infinite;
+}
+@keyframes du-pulse-green {
+  0%,100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
+  70%      { box-shadow: 0 0 0 5px rgba(34,197,94,0); }
+}
+
+.du-wallet-address { font-family: 'Courier New', monospace; font-size: 11.5px; color: rgba(255,220,180,0.42); }
+
+.du-wallet-connected {
+  font-size: 10px; font-weight: 700; color: #22c55e;
+  background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.25);
+  padding: 2px 8px; border-radius: 100px;
+}
+
+.du-welcome-right { display: flex; gap: 12px; }
+
+.du-quick-stat {
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(0,0,0,0.25); border: 1px solid rgba(255,167,87,0.2);
+  border-radius: 16px; padding: 14px 18px; min-width: 130px;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+
+.du-quick-stat-value {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 20px; font-weight: 800; color: #ffb870; margin: 0 0 2px;
+}
+
+.du-quick-stat-label { font-size: 11px; color: rgba(255,220,180,0.45); margin: 0; }
+
+/* ===== LAYOUT ===== */
+.du-content { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; align-items: start; }
+
+.du-section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+
+.du-section-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; margin: 0; }
+
+.du-see-all {
+  display: inline-flex; align-items: center; gap: 4px;
+  color: #ffa757; text-decoration: none; font-size: 13px; font-weight: 600; transition: opacity 0.2s;
+}
+.du-see-all:hover { opacity: 0.75; }
+
+/* ===== KAMPANYE LIST ===== */
+.du-kampanye-list { display: flex; flex-direction: column; gap: 12px; }
+
+.du-kampanye-card {
+  display: flex; gap: 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,167,87,0.1);
+  border-radius: 18px; padding: 13px;
+  text-decoration: none; color: white; transition: all 0.2s;
+}
+.du-kampanye-card:hover {
+  background: rgba(255,167,87,0.06);
+  border-color: rgba(255,167,87,0.22);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(168,77,44,0.15);
+}
+
+.du-kampanye-foto { width: 90px; height: 70px; border-radius: 12px; object-fit: cover; flex-shrink: 0; }
+
+.du-kampanye-info { flex: 1; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+
+.du-kampanye-judul { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.du-kampanye-progress-bar-bg { width: 100%; height: 5px; background: rgba(255,255,255,0.07); border-radius: 100px; overflow: hidden; }
+
+.du-kampanye-progress-bar-fill { height: 100%; background: linear-gradient(to right, #a84d2c, #ffa757); border-radius: 100px; }
+
+.du-kampanye-bottom { display: flex; justify-content: space-between; align-items: center; }
+
+.du-kampanye-eth { font-family: 'Exo 2', sans-serif; font-size: 13px; font-weight: 700; color: #ffb870; }
+
+.du-kampanye-meta { display: flex; align-items: center; gap: 10px; font-size: 11px; color: rgba(255,255,255,0.38); }
+
+.du-kampanye-persen { color: rgba(255,255,255,0.6); font-weight: 600; }
+
+.du-empty {
+  background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 16px; padding: 32px; text-align: center;
+  color: rgba(255,255,255,0.22); font-size: 14px;
+}
+
+/* ===== RIWAYAT ===== */
+/* nama class sama persis dengan asli */
+.du-riwayat-card { background: transparent; margin-bottom: 14px; display: flex; flex-direction: column; gap: 7px; }
+
+.du-riwayat-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 13px;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-left: 3px solid rgba(239,68,68,0.55);
+  border-radius: 0 12px 12px 0;
+  transition: all 0.2s;
+}
+.du-riwayat-item:hover {
+  background: rgba(239,68,68,0.05);
+  border-color: rgba(239,68,68,0.15);
+  border-left-color: #ef4444;
+  transform: translateX(2px);
+}
+
+/* Heart merah */
+.du-riwayat-heart {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(239,68,68,0.15);
+  border: 1px solid rgba(239,68,68,0.25);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  color: #ef4444;
+  animation: du-heartbeat 1.8s ease infinite;
+}
+.du-riwayat-item:nth-child(2) .du-riwayat-heart { animation-delay: 0.3s; }
+.du-riwayat-item:nth-child(3) .du-riwayat-heart { animation-delay: 0.6s; }
+.du-riwayat-item:nth-child(4) .du-riwayat-heart { animation-delay: 0.9s; }
+
+@keyframes du-heartbeat {
+  0%,100% { transform: scale(1); }
+  15%      { transform: scale(1.25); }
+  30%      { transform: scale(1); }
+  45%      { transform: scale(1.12); }
+  60%      { transform: scale(1); }
+}
+
+.du-riwayat-info { flex: 1; min-width: 0; }
+
+.du-riwayat-kampanye {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12.5px; font-weight: 600; margin: 0 0 3px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: white;
+}
+
+.du-riwayat-tanggal { font-family: 'DM Sans', sans-serif; font-size: 10.5px; color: rgba(255,255,255,0.3); margin: 0; }
+
+.du-riwayat-right { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; flex-shrink: 0; }
+
+.du-riwayat-jumlah { font-family: 'Exo 2', sans-serif; font-size: 13px; font-weight: 700; color: #ffb870; margin: 0; }
+
+.du-riwayat-tx {
+  display: inline-flex; align-items: center; gap: 3px;
+  color: #57a3ff; text-decoration: none;
+  font-family: 'DM Sans', sans-serif; font-size: 10.5px; font-weight: 600; transition: opacity 0.2s;
+}
+.du-riwayat-tx:hover { opacity: 0.7; }
+
+/* ===== CTA CARD ===== */
+.du-cta-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(168,77,44,0.15) 0%, rgba(255,167,87,0.08) 100%);
+  border: 1px solid rgba(255,167,87,0.22);
+  border-radius: 20px; padding: 22px; text-align: center; overflow: hidden;
+  box-shadow: 0 4px 20px -8px rgba(168,77,44,0.2);
+}
+.du-cta-card::before {
+  content: ''; position: absolute; top: -28px; right: -28px;
+  width: 90px; height: 90px; border-radius: 50%;
+  background: rgba(255,167,87,0.06); pointer-events: none;
+}
+.du-cta-card::after {
+  content: ''; position: absolute; bottom: -20px; left: -20px;
+  width: 70px; height: 70px; border-radius: 50%;
+  background: rgba(168,77,44,0.08); pointer-events: none;
+}
+
+.du-cta-icon {
+  width: 48px; height: 48px; border-radius: 14px;
+  background: linear-gradient(135deg, rgba(168,77,44,0.28), rgba(255,167,87,0.18));
+  border: 1px solid rgba(255,167,87,0.28);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px;
+}
+
+.du-cta-title { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 0 0 8px; }
+
+.du-cta-desc { font-family: 'Nunito Sans', sans-serif; font-size: 12.5px; color: rgba(255,220,180,0.42); line-height: 1.6; margin: 0 0 18px; }
+
+.du-cta-btn {
+  display: inline-block; padding: 11px 26px;
+  background: linear-gradient(to right, #a84d2c, #ffa757);
+  border-radius: 100px; color: white;
+  font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700;
+  text-decoration: none; box-shadow: 0 5px 18px rgba(168,77,44,0.4); transition: all 0.3s;
+}
+.du-cta-btn:hover { filter: brightness(1.1); box-shadow: 0 7px 22px rgba(168,77,44,0.55); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .du-content { grid-template-columns: 1fr; }
+  .du-welcome-card { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 768px) {
+  .du-welcome-right { flex-direction: column; width: 100%; }
+  .du-quick-stat { min-width: unset; flex: 1; }
+}
+
+
+
+

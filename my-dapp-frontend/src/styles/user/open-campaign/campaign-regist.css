@@ -1,0 +1,876 @@
+/* ============================================
+   campaign-regist.css
+   Font: Plus Jakarta Sans + Playfair Display
+   Tema: Dark navy + Orange gradient (Opsi B)
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap');
+
+/* ===== WRAPPER ===== */
+.dc-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(rgba(15, 23, 42, 0.90), rgba(15, 23, 42, 0.95)), url("../../../assets/images/user.png") no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: white;
+}
+
+/* ===== MAIN ===== */
+.dc-main {
+  padding: 88px 5% 60px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ===== BACK BUTTON ===== */
+.dc-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 6px 14px 6px 10px;
+  border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+  margin-bottom: 24px;
+}
+.dc-back:hover {
+  color: #ffa757;
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,167,87,0.3);
+  transform: translateX(-3px);
+}
+
+/* ===== PAGE HEADER ===== */
+.dc-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.dc-page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 800;
+  margin: 0 0 4px;
+  line-height: 1.2;
+}
+
+.dc-page-sub {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.38);
+  margin: 0;
+}
+
+/* ===== BUTTONS ===== */
+.dc-btn-buat {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  background: linear-gradient(to right, #a84d2c, #ffa757);
+  border: none;
+  border-radius: 100px;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(168, 77, 44, 0.35);
+  transition: all 0.3s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.dc-btn-buat:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 6px 20px rgba(168, 77, 44, 0.5);
+}
+
+/* ===== INFO BANNER ===== */
+.dc-info-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(255, 167, 87, 0.06);
+  border: 1px solid rgba(255, 167, 87, 0.18);
+  border-left: 3px solid #ffa757;
+  border-radius: 0 12px 12px 0;
+  padding: 13px 16px;
+  margin-bottom: 24px;
+  font-size: 13px;
+  line-height: 1.65;
+}
+.dc-info-banner p {
+  margin: 0;
+  color: rgba(255, 220, 180, 0.6);
+}
+
+/* ===== FILTER TABS ===== */
+.dc-filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+}
+.dc-filters::-webkit-scrollbar { display: none; }
+
+.dc-filter-btn {
+  padding: 8px 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.dc-filter-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+.dc-filter-btn.active {
+  background: rgba(255, 167, 87, 0.15);
+  border-color: #ffa757;
+  color: #ffa757;
+}
+
+/* ===== EMPTY STATE ===== */
+.dc-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 80px 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.28);
+  font-size: 14px;
+}
+
+/* ===== CAMPAIGN LIST ===== */
+.dc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dc-item {
+  display: flex;
+  gap: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 167, 87, 0.1);
+  border-radius: 20px;
+  padding: 18px;
+  transition: all 0.2s;
+}
+.dc-item:hover {
+  background: rgba(255, 167, 87, 0.05);
+  border-color: rgba(255, 167, 87, 0.22);
+  transform: translateY(-2px);
+}
+
+.dc-item-foto {
+  width: 110px;
+  height: 85px;
+  border-radius: 14px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.dc-item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.dc-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.dc-item-judul {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: white;
+}
+
+.dc-item-tanggal {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0;
+}
+
+/* ===== STATUS BADGES ===== */
+.dc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 11px;
+  border-radius: 100px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.dc-badge-aktif {
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #22c55e;
+}
+.dc-badge-menunggu {
+  background: rgba(255, 167, 87, 0.12);
+  border: 1px solid rgba(255, 167, 87, 0.3);
+  color: #ffa757;
+}
+.dc-badge-ditolak {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+.dc-badge-selesai {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.45);
+}
+/* ── Badge Voting (baru) ── */
+.dc-badge-voting {
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  color: #a78bfa;
+}
+
+/* ===== PROGRESS BAR ===== */
+.dc-item-progress-bg {
+  width: 100%;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 100px;
+  overflow: hidden;
+}
+.dc-item-progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, #a84d2c, #ffa757);
+  border-radius: 100px;
+  box-shadow: 0 0 6px rgba(255, 167, 87, 0.3);
+  transition: width 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ===== ITEM STATS ===== */
+.dc-item-stats {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.dc-item-eth {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffb870;
+}
+.dc-item-donatur,
+.dc-item-hari {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+.dc-item-persen {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.55);
+  margin-left: auto;
+}
+
+/* ===== PENDING INFO ===== */
+.dc-item-pending-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 13px;
+  color: rgba(255, 220, 160, 0.7);
+}
+.dc-item-pending-info > svg,
+.dc-item-pending-info > span:first-of-type {
+  /* baris pertama: ikon + teks tetap sejajar */
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+/* Baris ikon + label tetap sejajar horizontal */
+.dc-item-pending-info > :first-child,
+.dc-item-pending-info > svg ~ span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+/* ── Step indicator ── */
+.dc-pending-steps {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 2px;
+}
+.dc-pending-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.dc-pending-step span {
+  font-size: 10px;
+  color: rgba(255,255,255,0.3);
+  white-space: nowrap;
+  font-weight: 500;
+}
+.dc-pending-step.done span  { color: rgba(34,197,94,0.7); }
+.dc-pending-step.active span { color: #ffa757; font-weight: 700; }
+
+.dc-pending-step-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  border: 1.5px solid rgba(255,255,255,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.25);
+  font-size: 10px;
+}
+.dc-pending-step.done  .dc-pending-step-dot {
+  background: rgba(34,197,94,0.12);
+  border-color: rgba(34,197,94,0.4);
+  color: #22c55e;
+}
+.dc-pending-step.active .dc-pending-step-dot {
+  background: rgba(255,167,87,0.12);
+  border-color: rgba(255,167,87,0.45);
+  color: #ffa757;
+}
+.dc-pending-step-dot.pulse {
+  animation: dc-pending-pulse 2s infinite;
+}
+@keyframes dc-pending-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,167,87,0.4); }
+  60%       { box-shadow: 0 0 0 6px rgba(255,167,87,0); }
+}
+
+/* Garis penghubung antar step */
+.dc-pending-step-line {
+  flex: 1;
+  height: 1.5px;
+  background: rgba(255,255,255,0.1);
+  margin-bottom: 14px; /* supaya sejajar dengan titik (tinggi label di bawah) */
+  min-width: 20px;
+}
+.dc-pending-step-line.done {
+  background: rgba(34,197,94,0.4);
+}
+
+/* ── Progress bar keseluruhan ── */
+.dc-pending-progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.dc-pending-progress-bar {
+  flex: 1;
+  height: 5px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 100px;
+  overflow: hidden;
+}
+.dc-pending-progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, #a84d2c, #ffa757);
+  border-radius: 100px;
+  box-shadow: 0 0 6px rgba(255,167,87,0.35);
+  transition: width 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.dc-pending-progress-pct {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffa757;
+  flex-shrink: 0;
+}
+
+/* ===== TOLAK INFO ===== */
+.dc-item-tolak-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.dc-item-tolak-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: rgba(239, 68, 68, 0.8);
+}
+.dc-item-tolak-toggle {
+  background: none;
+  border: none;
+  color: #57a3ff;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 4px;
+  text-decoration: underline;
+}
+.dc-item-tolak-alasan {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  background: rgba(239, 68, 68, 0.06);
+  border: 1px solid rgba(239, 68, 68, 0.15);
+  border-left: 3px solid rgba(239, 68, 68, 0.5);
+  border-radius: 0 8px 8px 0;
+  padding: 10px 14px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ===== ITEM ACTIONS ===== */
+.dc-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dc-item-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 18px;
+  background: linear-gradient(to right, #a84d2c, #ffa757);
+  border: none;
+  border-radius: 100px;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 3px 12px rgba(168, 77, 44, 0.3);
+  transition: all 0.2s;
+}
+.dc-item-btn-primary:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 5px 18px rgba(168, 77, 44, 0.5);
+}
+.dc-item-btn-disabled {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.3);
+  font-style: italic;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .dc-item           { flex-direction: column; }
+  .dc-item-foto      { width: 100%; height: 160px; }
+  .dc-item-persen    { margin-left: 0; }
+  .dc-page-header    { flex-direction: column; }
+}
+
+/* ===== WALLET TAG ===== */
+.dc-wallet-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  padding: 3px 12px 3px 6px;
+  background: rgba(255, 255, 255, 0.03);
+  margin-top: 8px;
+}
+.dc-wallet-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 6px rgba(239, 68, 68, 0.5);
+  flex-shrink: 0;
+}
+.dc-wallet-dot.connected {
+  background: #22c55e;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.5);
+  animation: dc-pulse-green 2s infinite;
+}
+@keyframes dc-pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5); }
+  70%       { box-shadow: 0 0 0 5px rgba(34, 197, 94, 0); }
+}
+.dc-wallet-txt {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: rgba(255, 200, 160, 0.4);
+}
+.dc-wallet-badge {
+  font-size: 10px;
+  font-weight: 700;
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  padding: 2px 8px;
+  border-radius: 100px;
+}
+
+/* ===== BUTTON GROUP ===== */
+.dc-btn-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.dc-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  border-radius: 100px;
+  border: 1.5px solid rgba(255, 167, 87, 0.4);
+  background: transparent;
+  color: #ffa757;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.dc-btn-outline:hover {
+  background: rgba(255, 167, 87, 0.08);
+  border-color: rgba(255, 167, 87, 0.7);
+}
+
+/* ===== ORBIT EMPTY STATE ===== */
+.dc-orbit {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+.dc-orbit-r1 {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 167, 87, 0.22);
+  animation: dc-spin 9s linear infinite;
+}
+.dc-orbit-r2 {
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 167, 87, 0.12);
+  animation: dc-spin 6s linear infinite reverse;
+}
+@keyframes dc-spin {
+  to { transform: rotate(360deg); }
+}
+.dc-orbit-core {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dc-orbit-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(168, 77, 44, 0.2), rgba(255, 167, 87, 0.12));
+  border: 1px solid rgba(255, 167, 87, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dc-empty-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: rgba(255, 255, 255, 0.75);
+}
+.dc-empty-sub {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.28);
+  text-align: center;
+  line-height: 1.65;
+  margin: 0 0 20px;
+  max-width: 280px;
+}
+
+/* ============================================
+   VOTE PANEL — baru
+   ============================================ */
+
+.dc-vote-panel {
+  background: rgba(139, 92, 246, 0.05);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 14px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Header */
+.dc-vote-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dc-vote-shield {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 167, 87, 0.1);
+  border: 1px solid rgba(255, 167, 87, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.dc-vote-title {
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 0 2px;
+  color: white;
+}
+.dc-vote-sub {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0;
+}
+
+/* Status pill */
+.dc-vote-status-pill {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 100px;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+.dc-vote-status-pill.open {
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #22c55e;
+}
+.dc-vote-status-pill.failed {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+.dc-vote-status-pill.pending {
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: #a78bfa;
+}
+
+/* Bars */
+.dc-vote-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.dc-vote-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dc-vote-bar-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 80px;
+  flex-shrink: 0;
+}
+.dc-vote-bar-label.yes { color: #22c55e; }
+.dc-vote-bar-label.no  { color: #ef4444; }
+.dc-vote-bar-label strong { font-size: 13px; }
+.dc-vote-bar-pct {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 400;
+}
+
+.dc-vote-bar-track {
+  flex: 1;
+  height: 7px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 100px;
+  overflow: visible;
+  position: relative;
+}
+.dc-vote-bar-fill {
+  height: 100%;
+  border-radius: 100px;
+  transition: width 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.dc-vote-bar-fill.yes { background: linear-gradient(to right, #166534, #22c55e); box-shadow: 0 0 6px rgba(34,197,94,0.35); }
+.dc-vote-bar-fill.no  { background: linear-gradient(to right, #7f1d1d, #ef4444); box-shadow: 0 0 6px rgba(239,68,68,0.35); }
+
+/* Threshold marker line */
+.dc-vote-threshold-line {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  width: 2px;
+  background: #ffa757;
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(255,167,87,0.6);
+}
+
+/* Count text */
+.dc-vote-count {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0;
+}
+
+/* Meter (secondary gauge showing total yes%) */
+.dc-vote-meter {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 100px;
+  overflow: visible;
+}
+.dc-vote-meter-fill {
+  height: 100%;
+  background: linear-gradient(to right, #a84d2c, #ffa757);
+  border-radius: 100px;
+  transition: width 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 0 8px rgba(255,167,87,0.4);
+}
+.dc-vote-meter-line {
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  width: 1.5px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 1px;
+}
+.dc-vote-meter-target {
+  position: absolute;
+  top: -18px;
+  transform: translateX(-50%);
+  font-size: 9px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.45);
+  left: 80%; /* update dynamically via style if needed */
+  pointer-events: none;
+}
+
+/* Vote action buttons */
+.dc-vote-actions {
+  display: flex;
+  gap: 8px;
+}
+.dc-vote-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border: none;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.dc-vote-btn.yes {
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  color: #22c55e;
+}
+.dc-vote-btn.yes:hover {
+  background: rgba(34, 197, 94, 0.25);
+  box-shadow: 0 4px 16px rgba(34,197,94,0.25);
+}
+.dc-vote-btn.no {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+.dc-vote-btn.no:hover {
+  background: rgba(239, 68, 68, 0.22);
+  box-shadow: 0 4px 16px rgba(239,68,68,0.2);
+}
+
+/* Already voted note */
+.dc-vote-done-note {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+}
+
+/* Result banners */
+.dc-vote-result {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.dc-vote-result.open {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  color: #22c55e;
+}
+.dc-vote-result.failed {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #ef4444;
+}
+
+/* Spin animation untuk loading icon VotingOnChainPanel */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+
+
+

@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap');
+
+/* ================================================
+   navbar-admin.css
+   ================================================ */
+
+.nba-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 5%;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 50;
+  background: rgba(10, 22, 40, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  box-sizing: border-box;
+  gap: 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ✅ LOGO DISAMAKAN DENGAN USER */
+.nba-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  letter-spacing: -0.3px;
+}
+
+/* aksen oranye */
+.nba-logo span {
+  color: #ffa757;
+}
+
+/* TAG ADMIN */
+.nba-admin-tag {
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(255, 167, 87, 0.15);
+  border: 1px solid rgba(255, 167, 87, 0.3);
+  color: #ffa757;
+  padding: 2px 8px;
+  border-radius: 100px;
+  margin-left: 12px;
+}
+
+/* Spacer */
+.nba-spacer {
+  flex: 1;
+  max-width: 340px;
+}
+
+.nba-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nba-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 100px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.nba-nav-link:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nba-nav-link.nba-active {
+  color: white;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+/* Badge slot biar stabil */
+.nba-nav-badge-slot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 18px;
+}
+
+.nba-nav-badge {
+  background: #ef4444;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 100px;
+  line-height: 1.4;
+}
+
+/* RIGHT SIDE */
+.nba-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* NOTIF */
+.nba-notif-btn {
+  position: relative;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.nba-notif-btn:hover {
+  background: rgba(255, 255, 255, 0.13);
+}
+
+.nba-notif-btn.nba-active {
+  background: rgba(255, 167, 87, 0.15);
+  border-color: rgba(255, 167, 87, 0.3);
+  color: #ffa757;
+}
+
+.nba-notif-dot {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ef4444;
+  border: 2px solid #0a1628;
+}
+
+/* AVATAR */
+.nba-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a84d2c, #ffa757);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: box-shadow 0.2s;
+}
+
+.nba-avatar.nba-active {
+  box-shadow: 0 0 0 2px #ffa757;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nba-nav-links {
+    display: none;
+  }
+}
